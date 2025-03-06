@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.10)
+project(openscad-step-reader)
+
+find_package(OpenCASCADE COMPONENTS Foundation REQUIRED)
+find_package(OpenCASCADE COMPONENTS DataExchange REQUIRED)
+find_package(OpenCASCADE COMPONENTS Draw REQUIRED)
+find_package(OpenCASCADE COMPONENTS ModelingAlgorithms REQUIRED)
+find_package(OpenCASCADE COMPONENTS ModelingData REQUIRED)
+find_package(OpenCASCADE COMPONENTS Visualization REQUIRED)
+find_package(OpenCASCADE COMPONENTS ApplicationFramework REQUIRED)
+
+set(DEPS ${OpenCASCADE_LIBRARIES})
+add_executable(openscad-step-reader openscad-step-reader.cpp tessellation.cpp openscad-triangle-writer.cpp explore-shape.cpp)
+target_include_directories(openscad-step-reader PRIVATE ${OpenCASCADE_INCLUDE_DIR})
+target_link_directories(openscad-step-reader PRIVATE ${OpenCASCADE_LIBRARY_DIR})
+target_link_libraries(openscad-step-reader PRIVATE ${DEPS})

@@ -11,8 +11,9 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU Lesser General Public License for more details.
  */
-#ifndef __TRIANGLE__
-#define __TRIANGLE__
+#pragma once
+
+#include <iostream>
 
 class Point {
 	double _x,_y,_z;
@@ -30,10 +31,9 @@ public:
 		}
 
 };
-static ostream & operator << (ostream &out, const Point &p)
+inline std::ostream & operator << (std::ostream &out, const Point &p)
 {
-	out << "[" << p.x() << "," << p.y() << "," << p.z() << "]";
-	return out;
+	return out << "[" << p.x() << "," << p.y() << "," << p.z() << "]";
 }
 
 
@@ -52,15 +52,15 @@ public:
 		{
 			ostrm << "    " ;
 			_p1.write_ascii_stl(ostrm);
-			ostrm << endl;
+			ostrm << std::endl;
 
 			ostrm << "    " ;
 			_p2.write_ascii_stl(ostrm);
-			ostrm << endl;
+			ostrm << std::endl;
 
 			ostrm << "    " ;
 			_p3.write_ascii_stl(ostrm);
-			ostrm << endl;
+			ostrm << std::endl;
 		}
 
 };
@@ -121,6 +121,3 @@ public:
 		}
 };
 typedef std::vector<Face> Face_vector;
-
-
-#endif

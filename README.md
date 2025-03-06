@@ -123,6 +123,11 @@ then writes the triangles as openSCAD code:
 
     solid_object();
 
+## Building
+
+Debian packages required: libocct-data-exchange-dev libocct-draw-dev
+
+Build command: `cmake -B build && cmake --build build -j`
 
 ## License
 

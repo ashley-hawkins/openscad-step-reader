@@ -11,10 +11,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU Lesser General Public License for more details.
  */
-#ifndef __TESSELLATION__
-#define __TESSELLATION__
+#pragma once
 
 Face tessellate_face(const TopoDS_Face &aFace);
 Face_vector tessellate_shape (const TopoDS_Shape& shape);
-
-#endif

@@ -11,9 +11,6 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU Lesser General Public License for more details.
  */
-#ifndef __EXPLORE__
-#define __EXPLORE__
+#pragma once
 
 void explore_shape(const TopoDS_Shape& shape);
-
-#endif
